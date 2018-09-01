@@ -5,6 +5,12 @@ TextureImporter:
     21300000: fast-enemy-sprite
     21300002: heavy-enemy-sprite
     21300004: normal-enemy-sprite
+    21300006: fast-enemy-sprite
+    21300008: heavy-enemy-sprite
+    21300010: normal-enemy-sprite
+    21300012: enemy-spritesheet_3
+    21300014: enemy-spritesheet_4
+    21300016: fast-enemy-sprite
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -101,10 +107,10 @@ TextureImporter:
       name: fast-enemy-sprite
       rect:
         serializedVersion: 2
-        x: 5
-        y: 401
-        width: 100
-        height: 100
+        x: 93
+        y: 377
+        width: 50
+        height: 50
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -112,7 +118,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4dff4d4332aec93499736670d2812b44
+      spriteID: 1c2a2d48169920e45af702774fc5780c
       vertices: []
       indices: 
       edges: []
@@ -121,10 +127,10 @@ TextureImporter:
       name: heavy-enemy-sprite
       rect:
         serializedVersion: 2
-        x: 271
-        y: 6
-        width: 500
-        height: 500
+        x: 302
+        y: 26
+        width: 450
+        height: 450
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,7 +138,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 11dc242e57f4060468509887c828c936
+      spriteID: 3da29a650e652d84884ad74327fa6897
       vertices: []
       indices: 
       edges: []
@@ -141,10 +147,10 @@ TextureImporter:
       name: normal-enemy-sprite
       rect:
         serializedVersion: 2
-        x: 6
-        y: 102
-        width: 250
-        height: 250
+        x: 37
+        y: 104
+        width: 150
+        height: 150
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,7 +158,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: df3c2d424266b424e8bbee02699bff9e
+      spriteID: 8db288548e4000145ba45bec8164783a
       vertices: []
       indices: 
       edges: []

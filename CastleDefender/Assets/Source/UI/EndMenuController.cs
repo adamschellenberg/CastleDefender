@@ -14,6 +14,9 @@ public class EndMenuController : MonoBehaviour
     {
         _playAgainButton.onClick.AddListener(OnPlayAgainButtonClicked);
         _backToMenuButton.onClick.AddListener(OnBackToMenuButtonClicked);
+
+        SetHighScoreText();
+        SetCurrentScore();
     }
 
     public void OnPlayAgainButtonClicked()
@@ -29,12 +32,12 @@ public class EndMenuController : MonoBehaviour
     public void SetHighScoreText()
     {
         int highScore = PlayerPrefsManager.GetHighScore();
-        _highScoreText.text = highScore.ToString("00000");
+        _highScoreText.text = $"High Score: {highScore.ToString("00000")}";
     }
 
     public void SetCurrentScore()
     {
         int currentScore = PlayerPrefsManager.GetCurrentScore();
-        _currentScoreText.text = currentScore.ToString("00000");
+        _currentScoreText.text = $"Score: {currentScore.ToString("00000")}";
     }
 }

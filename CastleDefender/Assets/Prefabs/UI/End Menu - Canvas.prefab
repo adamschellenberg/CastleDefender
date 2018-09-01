@@ -790,6 +790,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playAgainButton: {fileID: 114387706754151928}
   _backToMenuButton: {fileID: 114154899650172080}
+  _highScoreText: {fileID: 114988553211176686}
+  _currentScoreText: {fileID: 114673435654708812}
 --- !u!114 &114717648146718714
 MonoBehaviour:
   m_ObjectHideFlags: 1

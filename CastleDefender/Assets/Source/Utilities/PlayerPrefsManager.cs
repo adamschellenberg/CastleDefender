@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class PlayerPrefsManager 
+public class PlayerPrefsManager
 {
     private const string _highScoreKey = "HighScore";
     private const string _currentScoreKey = "CurrentScore";
@@ -24,7 +24,7 @@ public class PlayerPrefsManager
 
         if (currentScore >= highScore)
         {
-            SetHighScore(currentScore);        
+            SetHighScore(currentScore);
         }
     }
 

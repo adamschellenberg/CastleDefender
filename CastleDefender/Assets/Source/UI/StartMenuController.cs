@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class StartMenuController : MonoBehaviour 
+public class StartMenuController : MonoBehaviour
 {
     [SerializeField] private Button _playButton;
     [SerializeField] private TMP_Text _highScoreText;

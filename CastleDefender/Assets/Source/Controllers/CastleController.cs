@@ -1,17 +1,19 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class CastleController : MonoBehaviour
 {
-
     [SerializeField] private float _maxHealth;
 
     private void Awake()
     {
         PlayerPrefsManager.SetCastleHealth(_maxHealth);
         PlayerPrefsManager.SetCurrentScore(0);
+    }
+
+    public void Hit(float damage)
+    {
+        OnHit(damage);
     }
 
     private void OnHit(float damage)
@@ -25,11 +27,6 @@ public class CastleController : MonoBehaviour
         {
             Die();
         }
-    }
-
-    public void Hit(float damage)
-    {
-        OnHit(damage);
     }
 
     private void Die()

@@ -1,10 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InGameUIController : MonoBehaviour 
+public class InGameUIController : MonoBehaviour
 {
     [SerializeField] private TMP_Text _highScoreText;
     [SerializeField] private TMP_Text _currentScoreText;

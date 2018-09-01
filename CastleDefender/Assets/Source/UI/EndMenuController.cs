@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class EndMenuController : MonoBehaviour 
+public class EndMenuController : MonoBehaviour
 {
     [SerializeField] private Button _playAgainButton;
     [SerializeField] private Button _backToMenuButton;

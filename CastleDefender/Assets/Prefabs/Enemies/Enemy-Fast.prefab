@@ -128,12 +128,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9f6e0cc7539e8b4584016c6e60c9ac8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1.5
-  enemyCollider: {fileID: 61932087352472898}
-  attackCooldownDefault: 1
-  attackPower: 1
-  health: 1
-  pointsWorth: 1
+  _moveSpeed: 1.5
+  _attackCooldownDefault: 1
+  _attackPower: 1
+  _maxHealth: 1
+  _pointsWorth: 1
+  _spawnRate: 0
+  _enemyType: 0
 --- !u!212 &212783319735380398
 SpriteRenderer:
   m_ObjectHideFlags: 1

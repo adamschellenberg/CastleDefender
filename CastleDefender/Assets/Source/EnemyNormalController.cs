@@ -36,8 +36,8 @@ public class EnemyNormalController : MonoBehaviour {
 			Attack ();
 		}
 
-		if (Input.GetKeyDown("space")) {
-			OnHit ();
+		if (health <= 0) {
+			Die ();
 		}
 		
 	}
@@ -46,11 +46,20 @@ public class EnemyNormalController : MonoBehaviour {
 		// stop moving when at castle
 		isAtCastle = true;
 	}
+
+	void OnCollisionEnter2D (Collision2D col) {
+	
+		if(col.gameObject.tag == "Projectile"){
+			OnHit ();
+		}
+	
+	}
 		
 
 	void Move() {
 		transform.Translate(new Vector2(moveSpeed * Time.deltaTime, 0));
 	}
+
 
 	void Attack() {
 		if (attackCooldown <= 0f) {
@@ -64,10 +73,15 @@ public class EnemyNormalController : MonoBehaviour {
 		}
 	}
 
+
 	void OnHit(){
-
 		// decrease heath
-		Debug.Log ("I'm hit!");
-
+		health -= 1;
 	}
+
+
+	void Die() {
+		Destroy (this.gameObject);
+	}
+		
 }

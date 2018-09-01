@@ -2,22 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyNormalController : MonoBehaviour {
+public class EnemyController : MonoBehaviour {
 
 	[SerializeField] private float moveSpeed;
 	[SerializeField] private Collider2D enemyCollider;
 
 	[SerializeField] private float attackCooldownDefault;
-	[SerializeField] private int attackPower;
+	[SerializeField] private float attackPower;
 	[SerializeField] private int health;
+	[SerializeField] private int pointsWorth = 1;
 
 
 	private bool isAtCastle;
 	private float attackCooldown;
 
+	public CastleController castleController;
+
 
 	// Use this for initialization
-	void Start () {
+	private void Start () {
 
 		isAtCastle = false;
 		attackCooldown = 0f;
@@ -25,7 +28,7 @@ public class EnemyNormalController : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	private void Update () {
 
 		if (isAtCastle == false) {
 			Move ();
@@ -41,7 +44,7 @@ public class EnemyNormalController : MonoBehaviour {
 		
 	}
 
-	void OnTriggerEnter2D (Collider2D col) {
+	private void OnTriggerEnter2D (Collider2D col) {
 		// stop moving when at castle
 		if (col.gameObject.tag == "Player") {
 			isAtCastle = true;
@@ -54,15 +57,15 @@ public class EnemyNormalController : MonoBehaviour {
 	}
 		
 
-	void Move() {
+	private void Move() {
 		transform.Translate(new Vector2(moveSpeed * Time.deltaTime, 0));
 	}
 
 
-	void Attack() {
+	private void Attack() {
 		if (attackCooldown <= 0f) {
 			// attack
-			Debug.Log("Enemy-Normal hit Castle");
+			castleController.Hit(attackPower);
 			// reset cooldown timer
 			attackCooldown = attackCooldownDefault;
 		} else {
@@ -72,13 +75,18 @@ public class EnemyNormalController : MonoBehaviour {
 	}
 
 
-	void OnHit(){
+	private void OnHit(){
 		// decrease heath
 		health -= 1;
 	}
 
 
-	void Die() {
+	private void Die() {
+
+		int currentScore = PlayerPrefsManager.GetCurrentScore ();
+		currentScore += pointsWorth;
+		PlayerPrefsManager.SetCurrentScore (currentScore);
+
 		Destroy (this.gameObject);
 	}
 		

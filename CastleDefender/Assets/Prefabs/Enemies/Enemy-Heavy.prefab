@@ -65,7 +65,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1928149545793240}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -2.62, z: 0}
   m_LocalScale: {x: 250, y: 250, z: 1}
   m_Children:
   - {fileID: 4214106084563430}
@@ -125,7 +125,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1928149545793240}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f061e5c814010cb42b4139bdc12af2e7, type: 3}
+  m_Script: {fileID: 11500000, guid: f9f6e0cc7539e8b4584016c6e60c9ac8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 0.5
@@ -133,6 +133,8 @@ MonoBehaviour:
   attackCooldownDefault: 3
   attackPower: 3
   health: 3
+  pointsWorth: 1
+  castleController: {fileID: 0}
 --- !u!212 &212027222411793184
 SpriteRenderer:
   m_ObjectHideFlags: 1

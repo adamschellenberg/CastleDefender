@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyNormalController : MonoBehaviour {
+public class EnemyHeavyController : MonoBehaviour {
 
 	[SerializeField] private float moveSpeed;
 	[SerializeField] private Collider2D enemyCollider;
@@ -10,7 +10,6 @@ public class EnemyNormalController : MonoBehaviour {
 	[SerializeField] private float attackCooldownDefault;
 	[SerializeField] private int attackPower;
 	[SerializeField] private int health;
-
 
 	private bool isAtCastle;
 	private float attackCooldown;

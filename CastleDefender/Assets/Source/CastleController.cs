@@ -28,7 +28,6 @@ public class CastleController : MonoBehaviour {
 		float currentHealth = PlayerPrefsManager.GetCastleHealth () * 100;
 		currentHealth -= damage;
 		PlayerPrefsManager.SetCastleHealth (currentHealth / 100);
-		Debug.Log (PlayerPrefsManager.GetCastleHealth().ToString());
 
 		if (currentHealth <= 0) {
 		

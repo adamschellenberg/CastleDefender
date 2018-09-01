@@ -16,7 +16,7 @@ public class EnemyController : MonoBehaviour {
 	private bool isAtCastle;
 	private float attackCooldown;
 
-	public CastleController castleController;
+	private CastleController castleController;
 
 
 	// Use this for initialization
@@ -24,6 +24,8 @@ public class EnemyController : MonoBehaviour {
 
 		isAtCastle = false;
 		attackCooldown = 0f;
+
+		castleController = GameObject.FindObjectOfType<CastleController> ();
 		
 	}
 	

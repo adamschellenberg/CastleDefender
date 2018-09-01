@@ -164,11 +164,6 @@ Prefab:
     m_Modifications:
     - target: {fileID: 224747617144274856, guid: 178ce3f6858e34848a8ecbc698e6a4f0,
         type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224747617144274856, guid: 178ce3f6858e34848a8ecbc698e6a4f0,
-        type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -267,16 +262,6 @@ Prefab:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114473705562481410, guid: 178ce3f6858e34848a8ecbc698e6a4f0,
-        type: 2}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114473705562481410, guid: 178ce3f6858e34848a8ecbc698e6a4f0,
-        type: 2}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 114988553211176686, guid: 178ce3f6858e34848a8ecbc698e6a4f0,
         type: 2}
       propertyPath: m_havePropertiesChanged
@@ -287,22 +272,32 @@ Prefab:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114387829158229678, guid: 178ce3f6858e34848a8ecbc698e6a4f0,
+    - target: {fileID: 114673435654708812, guid: 178ce3f6858e34848a8ecbc698e6a4f0,
         type: 2}
       propertyPath: m_havePropertiesChanged
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114387829158229678, guid: 178ce3f6858e34848a8ecbc698e6a4f0,
+    - target: {fileID: 114673435654708812, guid: 178ce3f6858e34848a8ecbc698e6a4f0,
         type: 2}
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114673435654708812, guid: 178ce3f6858e34848a8ecbc698e6a4f0,
+    - target: {fileID: 114473705562481410, guid: 178ce3f6858e34848a8ecbc698e6a4f0,
         type: 2}
       propertyPath: m_havePropertiesChanged
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114673435654708812, guid: 178ce3f6858e34848a8ecbc698e6a4f0,
+    - target: {fileID: 114473705562481410, guid: 178ce3f6858e34848a8ecbc698e6a4f0,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114387829158229678, guid: 178ce3f6858e34848a8ecbc698e6a4f0,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114387829158229678, guid: 178ce3f6858e34848a8ecbc698e6a4f0,
         type: 2}
       propertyPath: m_isInputParsingRequired
       value: 1

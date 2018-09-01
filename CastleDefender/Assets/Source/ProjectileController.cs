@@ -15,12 +15,13 @@ public class ProjectileController : MonoBehaviour
     private void Update()
     {
         this.transform.Translate(Vector3.right * Time.deltaTime * _moveSpeed);
+    }
 
-        //this.transform.position = Vector2.MoveTowards(this.transform.position, _targetPosition, _moveSpeed * Time.deltaTime);
-
-        //if(Vector2.Distance(this.transform.position, _targetPosition) <= 0.1f)
-        //{
-        //    Destroy(this.gameObject);
-        //}
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Enemy")
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

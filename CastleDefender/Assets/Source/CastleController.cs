@@ -3,46 +3,37 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class CastleController : MonoBehaviour {
+public class CastleController : MonoBehaviour
+{
 
-	[SerializeField] private float _maxHealth;
+    [SerializeField] private float _maxHealth;
 
-	private void Awake() {
+    private void Awake()
+    {
+        PlayerPrefsManager.SetCastleHealth(_maxHealth);
+        PlayerPrefsManager.SetCurrentScore(0);
+    }
 
-		PlayerPrefsManager.SetCastleHealth (1);
-		PlayerPrefsManager.SetCurrentScore (0);
+    private void OnHit(float damage)
+    {
+        float currentHealth = PlayerPrefsManager.GetCastleHealth();
+        currentHealth -= damage;
 
-	}
+        PlayerPrefsManager.SetCastleHealth(currentHealth);
 
-	// Use this for initialization
-	private void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	private void Update () {
-		
-	}
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
 
-	private void OnHit(float damage) {
-		float currentHealth = PlayerPrefsManager.GetCastleHealth () * 100;
-		currentHealth -= damage;
-		PlayerPrefsManager.SetCastleHealth (currentHealth / 100);
+    public void Hit(float damage)
+    {
+        OnHit(damage);
+    }
 
-		if (currentHealth <= 0) {
-		
-			Die ();
-
-		}
-	}
-
-	public void Hit(float damage) {
-		OnHit (damage);
-	}
-
-	private void Die() {
-	
-		SceneManager.LoadScene ("EndMenu");
-	
-	}
+    private void Die()
+    {
+        SceneManager.LoadScene("EndMenu");
+    }
 }

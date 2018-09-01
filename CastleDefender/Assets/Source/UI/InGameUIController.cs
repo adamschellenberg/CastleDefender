@@ -20,7 +20,7 @@ public class InGameUIController : MonoBehaviour
     public void SetCastleHealth()
     {
         float castleHealth = PlayerPrefsManager.GetCastleHealth();
-        _castleHealthSlider.value = castleHealth;
+        _castleHealthSlider.value = castleHealth / 100;
     }
 
     public void SetHighScoreText()

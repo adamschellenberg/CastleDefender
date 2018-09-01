@@ -344,24 +344,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 114486617549842652, guid: b4104acefbc2e4d748783cf342ae5b2d,
-        type: 2}
-      propertyPath: _fastEnemy
-      value: 
-      objectReference: {fileID: 114902819327845580, guid: 24e8880f6bfe1904daacdf1912a123d0,
-        type: 2}
-    - target: {fileID: 114486617549842652, guid: b4104acefbc2e4d748783cf342ae5b2d,
-        type: 2}
-      propertyPath: _normalEnemy
-      value: 
-      objectReference: {fileID: 114842768441373474, guid: 20471be465f49ba4da322c27bbc49d9b,
-        type: 2}
-    - target: {fileID: 114486617549842652, guid: b4104acefbc2e4d748783cf342ae5b2d,
-        type: 2}
-      propertyPath: _heavyEnemy
-      value: 
-      objectReference: {fileID: 114979577116396284, guid: 820a61665000ffa4a9e5dc5a67a4d10a,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4104acefbc2e4d748783cf342ae5b2d, type: 2}
   m_IsPrefabAsset: 0

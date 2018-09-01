@@ -66,7 +66,8 @@ public class EnemySpawner : MonoBehaviour
         EnemyController pooledEnemyController = _enemyPool.FirstOrDefault(enemy => enemy.IsActive == false && enemy.EnemyType == enemyType);
 
         Vector2 position = new Vector2(_spawnPositionX, Random.Range(_spawnPositionYRange.x, _spawnPositionYRange.y));
-        if(pooledEnemyController == null)
+
+        if (pooledEnemyController == null)
         {
             GameObject enemyGameObject = Instantiate(enemyPrefab.gameObject, position, Quaternion.identity, _enemyContainer.transform);
 

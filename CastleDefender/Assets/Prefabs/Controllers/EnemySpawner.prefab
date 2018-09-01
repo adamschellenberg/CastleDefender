@@ -51,10 +51,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ef584d7cc3db1f419f9f98f854e274c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalEnemy: {fileID: 1049089223170702, guid: 20471be465f49ba4da322c27bbc49d9b,
+  _spawnPositionX: -11
+  _spawnPositionYRange: {x: -4, y: 4.5}
+  _normalEnemy: {fileID: 114842768441373474, guid: 20471be465f49ba4da322c27bbc49d9b,
     type: 2}
   normalEnemySpawnRate: 0.8
-  fastEnemy: {fileID: 1427671617565164, guid: 24e8880f6bfe1904daacdf1912a123d0, type: 2}
+  _fastEnemy: {fileID: 114902819327845580, guid: 24e8880f6bfe1904daacdf1912a123d0,
+    type: 2}
   fastEnemySpawnRate: 1.5
-  heavyEnemy: {fileID: 1928149545793240, guid: 820a61665000ffa4a9e5dc5a67a4d10a, type: 2}
+  _heavyEnemy: {fileID: 114979577116396284, guid: 820a61665000ffa4a9e5dc5a67a4d10a,
+    type: 2}
   heavyEnemySpawnRate: 2

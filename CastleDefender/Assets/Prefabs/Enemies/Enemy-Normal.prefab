@@ -133,8 +133,7 @@ MonoBehaviour:
   _attackPower: 2
   _maxHealth: 2
   _pointsWorth: 1
-  _spawnRate: 0
-  _enemyType: 2
+  _enemyType: 1
 --- !u!212 &212963301600777506
 SpriteRenderer:
   m_ObjectHideFlags: 1

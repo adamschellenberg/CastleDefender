@@ -3,14 +3,6 @@ using UnityEngine.SceneManagement;
 
 public class CastleController : MonoBehaviour
 {
-    [SerializeField] private float _maxHealth;
-
-    private void Awake()
-    {
-        PlayerPrefsManager.SetCastleHealth(_maxHealth);
-        PlayerPrefsManager.SetCurrentScore(0);
-    }
-
     public void Hit(float damage)
     {
         OnHit(damage);
@@ -18,12 +10,9 @@ public class CastleController : MonoBehaviour
 
     private void OnHit(float damage)
     {
-        float currentHealth = PlayerPrefsManager.GetCastleHealth();
-        currentHealth -= damage;
+        PlayerPrefsManager.DecreaseCurrentHealth(damage);
 
-        PlayerPrefsManager.SetCastleHealth(currentHealth);
-
-        if (currentHealth <= 0)
+        if (PlayerPrefsManager.GetCurrentHealth() <= 0)
         {
             Die();
         }

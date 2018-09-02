@@ -5,6 +5,8 @@ using System.Linq;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private ProjectileController _projectilePrefab;
+    [SerializeField] private float _heatWaveSpawnDistance = 5;
+    [SerializeField] private float _heatWaveProjectileCount = 15;
 
     private List<ProjectileController> _projectilePool = new List<ProjectileController>();
 
@@ -23,7 +25,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) == true && _fireRateTimer >= PlayerPrefsManager.GetFireRate())
         {
-            FireProjectile();
+            FireProjectile(this.transform.position, this.transform.rotation);
             _fireRateTimer = 0;
         }
 
@@ -33,13 +35,26 @@ public class PlayerController : MonoBehaviour
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
 
-    private void FireProjectile()
+    public void HeatWave()
+    {
+        for (int i = 0; i < _heatWaveProjectileCount; i++)
+        {
+            FireProjectile(new Vector3(this.transform.position.x, this.transform.position.x + (i * _heatWaveSpawnDistance), 0), Quaternion.identity);
+        }
+
+        for (int i = 0; i < _heatWaveProjectileCount; i++)
+        {
+            FireProjectile(new Vector3(this.transform.position.x, this.transform.position.x - (i * _heatWaveSpawnDistance), 0), Quaternion.identity);
+        }
+    }
+
+    private void FireProjectile(Vector3 position, Quaternion rotation)
     {
         ProjectileController pooledProjectile = _projectilePool.FirstOrDefault(projectile => projectile.IsActive == false);
 
         if (pooledProjectile == null)
         {
-            GameObject projectileGameObject = Instantiate(_projectilePrefab.gameObject, this.transform.position, this.transform.rotation, _projectileContainer.transform);
+            GameObject projectileGameObject = Instantiate(_projectilePrefab.gameObject, position, rotation, _projectileContainer.transform);
 
             pooledProjectile = projectileGameObject.GetComponent<ProjectileController>();
             _projectilePool.Add(pooledProjectile);

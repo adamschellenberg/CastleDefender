@@ -123,6 +123,7 @@ MonoBehaviour:
   _attackPower: 3
   _maxHealth: 3
   _pointsWorth: 1
+  _moneyWorth: 1
   _enemyType: 2
 --- !u!212 &212027222411793184
 SpriteRenderer:

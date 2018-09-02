@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
 
     private GameObject _projectileContainer;
 
+    private float _fireRateTimer = 0;
+
     private void Awake()
     {
         _projectileContainer = new GameObject("ProjectileContainer");
@@ -17,9 +19,12 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) == true)
+        _fireRateTimer += Time.deltaTime;
+
+        if (Input.GetMouseButtonDown(0) == true && _fireRateTimer >= PlayerPrefsManager.GetFireRate())
         {
             FireProjectile();
+            _fireRateTimer = 0;
         }
 
         Vector3 pos = Camera.main.WorldToScreenPoint(this.transform.position);

@@ -15,13 +15,14 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float _moveSpeed;
     [SerializeField] private float _attackCooldownDefault;
     [SerializeField] private float _attackPower;
-    [SerializeField] private int _maxHealth;
+    [SerializeField] private float _maxHealth;
     [SerializeField] private int _pointsWorth = 1;
+    [SerializeField] private int _moneyWorth = 1;
     [SerializeField] private EnemyType _enemyType;
 
     private bool _isAtCastle;
     private float _attackCooldown;
-    private int _currentHealth;
+    private float _currentHealth;
 
     private CastleController _castleController;
 
@@ -107,15 +108,13 @@ public class EnemyController : MonoBehaviour
 
     private void OnHit()
     {
-        _currentHealth -= 1;
+        _currentHealth -= PlayerPrefsManager.GetDamage();
     }
 
     private void Die()
     {
-        int currentScore = PlayerPrefsManager.GetCurrentScore();
-        currentScore += _pointsWorth;
-
-        PlayerPrefsManager.SetCurrentScore(currentScore);
+        PlayerPrefsManager.IncreaseCurrentScore(_pointsWorth);
+        PlayerPrefsManager.IncreaseMoney(_moneyWorth);
 
         Deactivate();
     }

@@ -20,6 +20,8 @@ public class CastleController : MonoBehaviour
 
     private void Die()
     {
+		//print currentspawnrates
+
         SceneManager.LoadScene("EndMenu");
     }
 }

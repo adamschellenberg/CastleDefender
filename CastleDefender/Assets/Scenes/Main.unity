@@ -455,17 +455,32 @@ Prefab:
     - target: {fileID: 114486617549842652, guid: b4104acefbc2e4d748783cf342ae5b2d,
         type: 2}
       propertyPath: normalEnemySpawnRateDefault
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114486617549842652, guid: b4104acefbc2e4d748783cf342ae5b2d,
         type: 2}
       propertyPath: fastEnemySpawnRateDefault
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114486617549842652, guid: b4104acefbc2e4d748783cf342ae5b2d,
         type: 2}
       propertyPath: heavyEnemySpawnRateDefault
-      value: 3.5
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114486617549842652, guid: b4104acefbc2e4d748783cf342ae5b2d,
+        type: 2}
+      propertyPath: normalEnemySpawnRateModifier
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114486617549842652, guid: b4104acefbc2e4d748783cf342ae5b2d,
+        type: 2}
+      propertyPath: fastEnemySpawnRateModifier
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 114486617549842652, guid: b4104acefbc2e4d748783cf342ae5b2d,
+        type: 2}
+      propertyPath: heavyEnemySpawnRateModifier
+      value: 120
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4104acefbc2e4d748783cf342ae5b2d, type: 2}
@@ -633,6 +648,11 @@ Prefab:
         type: 2}
       propertyPath: _damageIncreaseRate
       value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 114334659070977740, guid: 9f76c84b8d0374b02bb0a8dd4e77bc8a,
+        type: 2}
+      propertyPath: _defaultFireRate
+      value: 0.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f76c84b8d0374b02bb0a8dd4e77bc8a, type: 2}

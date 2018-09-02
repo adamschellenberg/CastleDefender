@@ -47,9 +47,9 @@ public class InGameUIController : MonoBehaviour
     [SerializeField] private float _currentHealthIncreasePercent = 0.1f;
 
     [Header("Defaults")]
-    [SerializeField] private static float _defaultFireRate = 1;
-    [SerializeField] private static float _defaultDamage = 1;
-    [SerializeField] private static float _defaultMaxHealth = 10;
+    [SerializeField] private float _defaultFireRate = 1;
+    [SerializeField] private float _defaultDamage = 1;
+    [SerializeField] private float _defaultMaxHealth = 10;
 
     private int _currentFireRatelevel;
     private int _currentDamageLevel;
@@ -64,7 +64,7 @@ public class InGameUIController : MonoBehaviour
     {
         PlayerPrefsManager.SetFireRate(_defaultFireRate);
         PlayerPrefsManager.SetDamage(_defaultDamage);
-        PlayerPrefsManager.SetMoney(1000);
+        PlayerPrefsManager.SetMoney(0);
         PlayerPrefsManager.SetMaxHealth(_defaultMaxHealth);
         PlayerPrefsManager.SetCurrentHealth(_defaultMaxHealth);
         PlayerPrefsManager.SetCurrentScore(0);

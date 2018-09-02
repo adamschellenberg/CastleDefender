@@ -119,11 +119,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveSpeed: 1.5
-  _attackCooldownDefault: 1
-  _attackPower: 1
+  _attackCooldownDefault: 0.2
+  _attackPower: 0.01
   _maxHealth: 1
   _pointsWorth: 1
-  _moneyWorth: 1
+  _moneyWorth: 2
   _enemyType: 0
 --- !u!212 &212783319735380398
 SpriteRenderer:

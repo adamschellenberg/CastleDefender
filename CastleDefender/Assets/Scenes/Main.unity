@@ -452,6 +452,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114486617549842652, guid: b4104acefbc2e4d748783cf342ae5b2d,
+        type: 2}
+      propertyPath: normalEnemySpawnRateDefault
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114486617549842652, guid: b4104acefbc2e4d748783cf342ae5b2d,
+        type: 2}
+      propertyPath: fastEnemySpawnRateDefault
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114486617549842652, guid: b4104acefbc2e4d748783cf342ae5b2d,
+        type: 2}
+      propertyPath: heavyEnemySpawnRateDefault
+      value: 3.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4104acefbc2e4d748783cf342ae5b2d, type: 2}
   m_IsPrefabAsset: 0

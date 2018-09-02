@@ -22,6 +22,17 @@ public class CastleController : MonoBehaviour
     {
 		//print currentspawnrates
 
+		EnemySpawner currentRespawnRates;
+		currentRespawnRates = GameObject.FindObjectOfType<EnemySpawner>();
+
+		float normalEnemyRespawnRate = currentRespawnRates.currentNormalEnemySpawnRate;
+		float fastEnemyRespawnRate = currentRespawnRates.currentFastEnemySpawnRate;
+		float heavyEnemyRespawnRate = currentRespawnRates.currentHeavyEnemySpawnRate;
+
+		Debug.Log ("Normal Enemy Respawn Rate: " + normalEnemyRespawnRate.ToString());
+		Debug.Log ("Fast Enemy Respawn Rate: " + fastEnemyRespawnRate.ToString());
+		Debug.Log ("Heavy Enemy Respawn Rate: " + heavyEnemyRespawnRate.ToString());
+
         SceneManager.LoadScene("EndMenu");
     }
 }

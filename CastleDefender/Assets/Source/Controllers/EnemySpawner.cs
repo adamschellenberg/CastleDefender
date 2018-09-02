@@ -98,9 +98,17 @@ public class EnemySpawner : MonoBehaviour
 
 		float currentScore = (float) PlayerPrefsManager.GetCurrentScore ();
 
-		currentNormalEnemySpawnRate = normalEnemySpawnRateDefault - (currentScore / normalEnemySpawnRateModifier);
-		currentFastEnemySpawnRate = fastEnemySpawnRateDefault - (currentScore / fastEnemySpawnRateModifier);
-		currentHeavyEnemySpawnRate = heavyEnemySpawnRateDefault - (currentScore / heavyEnemySpawnRateModifier);
+		if (currentNormalEnemySpawnRate >= 2f) {
+			currentNormalEnemySpawnRate = normalEnemySpawnRateDefault - (currentScore / normalEnemySpawnRateModifier);
+		}
+
+		if (currentFastEnemySpawnRate >= 1.5f) {
+			currentFastEnemySpawnRate = fastEnemySpawnRateDefault - (currentScore / fastEnemySpawnRateModifier);
+		}
+
+		if (currentHeavyEnemySpawnRate >= 2.5f) {
+			currentHeavyEnemySpawnRate = heavyEnemySpawnRateDefault - (currentScore / heavyEnemySpawnRateModifier);
+		}
 
 	}
 }

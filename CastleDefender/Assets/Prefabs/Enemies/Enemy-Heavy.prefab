@@ -118,10 +118,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9f6e0cc7539e8b4584016c6e60c9ac8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 0.5
+  _moveSpeed: 0.15
   _attackCooldownDefault: 5
-  _attackPower: 2
-  _maxHealth: 3
+  _attackPower: 1
+  _maxHealth: 10
   _pointsWorth: 10
   _moneyWorth: 20
   _enemyType: 2

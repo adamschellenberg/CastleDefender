@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     {
         _fireRateTimer += Time.deltaTime;
 
-        if (Input.GetMouseButtonDown(0) == true && _fireRateTimer >= PlayerPrefsManager.GetFireRate())
+        if (Input.GetMouseButton(0) == true && _fireRateTimer >= PlayerPrefsManager.GetFireRate())
         {
             FireProjectile(this.transform.position, this.transform.rotation);
             _fireRateTimer = 0;

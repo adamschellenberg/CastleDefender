@@ -55,10 +55,19 @@ MonoBehaviour:
   _spawnPositionYRange: {x: -4, y: 4.5}
   _normalEnemy: {fileID: 114842768441373474, guid: 20471be465f49ba4da322c27bbc49d9b,
     type: 2}
-  normalEnemySpawnRate: 0.8
+  normalEnemySpawnRateDefault: 6
+  currentNormalEnemySpawnRate: 0
   _fastEnemy: {fileID: 114902819327845580, guid: 24e8880f6bfe1904daacdf1912a123d0,
     type: 2}
-  fastEnemySpawnRate: 1.5
+  fastEnemySpawnRateDefault: 2.5
+  currentFastEnemySpawnRate: 0
   _heavyEnemy: {fileID: 114979577116396284, guid: 820a61665000ffa4a9e5dc5a67a4d10a,
     type: 2}
-  heavyEnemySpawnRate: 2
+  heavyEnemySpawnRateDefault: 25
+  currentHeavyEnemySpawnRate: 0
+  normalEnemySpawnRateModifier: 50
+  fastEnemySpawnRateModifier: 70
+  heavyEnemySpawnRateModifier: 120
+  normalEnemyRespawnCap: 1.3
+  fastEnemyRespawnCap: 1
+  heavyEnemyRespawnCap: 3

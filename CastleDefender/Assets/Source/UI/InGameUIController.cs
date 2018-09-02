@@ -40,13 +40,12 @@ public class InGameUIController : MonoBehaviour
 
     [Header("Max Health")]
     [SerializeField] private float _maxHealthIncreaseCost = 1;
+	[SerializeField] private float _maxHealthIncreaseRate = 5;
     [SerializeField] private float _maxHealthIncreaseCostMultiplier = 1.1f;
-    [SerializeField] private float _maxHealthIncreaseRate = 0.5f;
 
     [Header("Current Health")]
     [SerializeField] private float _currentHealthIncreaseCost = 1;
-    [SerializeField] private float _currentHealthIncreaseCostMultiplier = 1.1f;
-    [SerializeField] private float _currentHealthIncreasePercent = 0.1f;
+	[SerializeField] private float _currentHealthIncreasePercent = 0.20f;
 
     [Header("Defaults")]
     [SerializeField] private float _defaultFireRate = 1;
@@ -62,13 +61,16 @@ public class InGameUIController : MonoBehaviour
     private int _currentDamageLevel;
     private int _currentMaxHealthLevel;
 
-    private float _currentFireRateIncreaseCost = 1;
-    private float _currentDamageIncreaseCost = 1;
-    private float _currentMaxHealthIncreaseCost = 1;
-    private float _currentCurrentHealthIncreaseCost = 1;
+    private float _currentFireRateIncreaseCost;
+    private float _currentDamageIncreaseCost;
+	private float _currentMaxHealthIncreaseCost;
 
     private void Start()
     {
+		_currentFireRateIncreaseCost = _fireRateIncreaseCost;
+		_currentDamageIncreaseCost = _damageIncreaseCost;
+		_currentMaxHealthIncreaseCost = _maxHealthIncreaseCost;
+
         PlayerPrefsManager.SetFireRate(_defaultFireRate);
         PlayerPrefsManager.SetDamage(_defaultDamage);
         PlayerPrefsManager.SetMoney(0);
@@ -97,26 +99,31 @@ public class InGameUIController : MonoBehaviour
         _increaseMaxHealthButton.onClick.AddListener(() =>
         {
             _currentMaxHealthLevel += 1;
-            _currentMaxHealthIncreaseCost *= _maxHealthIncreaseCostMultiplier;
-            PlayerPrefsManager.IncreaseMaxHealth(_maxHealthIncreaseRate);
-            PlayerPrefsManager.DecreaseMoney(_currentMaxHealthIncreaseCost);
+			_currentMaxHealthIncreaseCost *= _maxHealthIncreaseCostMultiplier;
+			PlayerPrefsManager.IncreaseMaxHealth(_maxHealthIncreaseRate);
+			PlayerPrefsManager.DecreaseMoney(_currentMaxHealthIncreaseCost);
         });
 
         _increaseHealthButton.onClick.AddListener(() =>
         {
-            _currentCurrentHealthIncreaseCost *= _currentHealthIncreaseCostMultiplier;
             PlayerPrefsManager.IncreaseCurrentHealth(_currentHealthIncreasePercent);
-            PlayerPrefsManager.DecreaseMoney(_currentCurrentHealthIncreaseCost);
+				PlayerPrefsManager.DecreaseMoney(_currentMaxHealthIncreaseCost);
         });
 
         _heatWaveButton.onClick.AddListener(() =>
         {
             _playerController.HeatWave();
+			PlayerPrefsManager.DecreaseMoney(_heatWaveCost);
         });
     }
 
     private void Update()
     {
+		Debug.Log("Fire Rate: " + PlayerPrefsManager.GetFireRate());
+		Debug.Log("Damage: " + PlayerPrefsManager.GetDamage());
+		Debug.Log("Max Health: " + PlayerPrefsManager.GetMaxHealth());
+		Debug.Log("Current Health: " + PlayerPrefsManager.GetCurrentHealth());
+
         SetCastleHealthText();
         SetCurrentScoreText();
         SetHighScoreText();
@@ -129,14 +136,14 @@ public class InGameUIController : MonoBehaviour
 
         _increaseFireRateButton.interactable = currentMoney > 0 && currentMoney >= _currentFireRateIncreaseCost;
         _increaseDamageButton.interactable = currentMoney > 0 && currentMoney >= _currentDamageIncreaseCost;
-        _increaseMaxHealthButton.interactable = currentMoney > 0 && currentMoney >= _currentMaxHealthIncreaseCost;
-        _increaseHealthButton.interactable = currentMoney > 0 && currentMoney >= _currentCurrentHealthIncreaseCost && PlayerPrefsManager.GetCurrentHealth() < PlayerPrefsManager.GetMaxHealth();
+		_increaseMaxHealthButton.interactable = currentMoney > 0 && currentMoney >= _currentMaxHealthIncreaseCost;
+		_increaseHealthButton.interactable = currentMoney > 0 && currentMoney >= _currentHealthIncreaseCost && PlayerPrefsManager.GetCurrentHealth() < PlayerPrefsManager.GetMaxHealth();
         _heatWaveButton.interactable = currentMoney > 0 && currentMoney >= _heatWaveCost;
 
         _fireRateCostText.text = $"-Fire Rate:\n(${_currentFireRateIncreaseCost.ToString("0.00")})";
         _damageCostText.text = $"+Damage:\n(${_currentDamageIncreaseCost.ToString("0.00")})";
-        _maxHealthCostText.text = $"+Max HP:\n${_currentMaxHealthIncreaseCost.ToString("0.00")})";
-        _currentHealthCostText.text = $"+HP:\n(${_currentCurrentHealthIncreaseCost.ToString("0.00")})";
+		_maxHealthCostText.text = $"+Max HP:\n$({_currentMaxHealthIncreaseCost.ToString("0.00")})";
+        _currentHealthCostText.text = $"+HP:\n(${_currentHealthIncreaseCost.ToString("0.00")})";
     }
 
     public void SetCurrentMoneyText()

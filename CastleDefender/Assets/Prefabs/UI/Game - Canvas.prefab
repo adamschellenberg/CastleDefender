@@ -1014,11 +1014,10 @@ MonoBehaviour:
   _damageIncreaseCostMultiplier: 1.1
   _damageIncreaseRate: 0.05
   _maxHealthIncreaseCost: 1
-  _maxHealthIncreaseCostMultiplier: 1.1
   _maxHealthIncreaseRate: 0.5
-  _currentHealthIncreaseCost: 1
-  _currentHealthIncreaseCostMultiplier: 1.1
-  _currentHealthIncreasePercent: 0.1
+  _maxHealthIncreaseCostMultiplier: 1.1
+  _currentHealthIncreaseCost: 10
+  _currentHealthIncreasePercent: 0.2
   _defaultFireRate: 0.8
   _defaultDamage: 1
   _defaultMaxHealth: 10

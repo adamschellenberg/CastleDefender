@@ -5,7 +5,6 @@ public class ProjectileController : MonoBehaviour
     public bool IsActive { get; set; }
 
     [SerializeField] private float _moveSpeed = 1;
-    [SerializeField] private float _damage = 1;
     [SerializeField] private float _timeout = 5;
 
     private float _timeoutTimer = 0;

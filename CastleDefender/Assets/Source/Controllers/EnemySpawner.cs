@@ -27,6 +27,10 @@ public class EnemySpawner : MonoBehaviour
 	[SerializeField] private float fastEnemySpawnRateModifier;
 	[SerializeField] private float heavyEnemySpawnRateModifier;
 
+	[SerializeField] private float normalEnemyRespawnCap;
+	[SerializeField] private float fastEnemyRespawnCap;
+	[SerializeField] private float heavyEnemyRespawnCap;
+
     private List<EnemyController> _enemyPool = new List<EnemyController>();
     private GameObject _enemyContainer;
 
@@ -98,15 +102,15 @@ public class EnemySpawner : MonoBehaviour
 
 		float currentScore = (float) PlayerPrefsManager.GetCurrentScore ();
 
-		if (currentNormalEnemySpawnRate >= 2f) {
+		if (currentNormalEnemySpawnRate >= normalEnemyRespawnCap) {
 			currentNormalEnemySpawnRate = normalEnemySpawnRateDefault - (currentScore / normalEnemySpawnRateModifier);
 		}
 
-		if (currentFastEnemySpawnRate >= 1.5f) {
+		if (currentFastEnemySpawnRate >= fastEnemyRespawnCap) {
 			currentFastEnemySpawnRate = fastEnemySpawnRateDefault - (currentScore / fastEnemySpawnRateModifier);
 		}
 
-		if (currentHeavyEnemySpawnRate >= 2.5f) {
+		if (currentHeavyEnemySpawnRate >= heavyEnemyRespawnCap) {
 			currentHeavyEnemySpawnRate = heavyEnemySpawnRateDefault - (currentScore / heavyEnemySpawnRateModifier);
 		}
 

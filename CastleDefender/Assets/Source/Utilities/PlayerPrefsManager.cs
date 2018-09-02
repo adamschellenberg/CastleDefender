@@ -122,7 +122,8 @@ public class PlayerPrefsManager
         float currentMaxHealth = GetMaxHealth();
         currentMaxHealth += amount;
 
-        IncreaseCurrentHealth(amount);
+		float currentHealth = GetCurrentHealth ();
+		SetCurrentHealth (currentHealth + amount);
 
         SetMaxHealth(currentMaxHealth);
     }
@@ -137,10 +138,17 @@ public class PlayerPrefsManager
         return PlayerPrefs.GetFloat(_currentHealthKey, 0);
     }
 
-    public static void IncreaseCurrentHealth(float amount)
+    public static void IncreaseCurrentHealth(float percentOfMaxHealth)
     {
         float currentHealth = GetCurrentHealth();
-        currentHealth += amount;
+		float maxHealth = GetMaxHealth ();
+
+		currentHealth += percentOfMaxHealth * maxHealth;
+
+		if (currentHealth > maxHealth) 
+		{
+			currentHealth = maxHealth;
+		}
 
         SetCurrentHealth(currentHealth);
     }

@@ -115,7 +115,7 @@ MonoBehaviour:
     type: 2}
   _heatWaveSpawnDistance: 5
   _heatWaveProjectileCount: 15
-  _heatWaveProjectileOffset: 0.2
+  _heatWaveProjectileOffset: 0.1
 --- !u!212 &212066847407627512
 SpriteRenderer:
   m_ObjectHideFlags: 1

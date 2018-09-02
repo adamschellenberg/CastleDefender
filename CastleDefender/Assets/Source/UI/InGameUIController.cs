@@ -34,7 +34,7 @@ public class InGameUIController : MonoBehaviour
     [Header("Damage")]
     [SerializeField] private float _damageIncreaseCost = 1;
     [SerializeField] private float _damageIncreaseCostMultiplier = 1.1f;
-    [SerializeField] private float _damageIncreaseRate = 1;
+    [SerializeField] private float _damageIncreaseRate = 0.05f;
 
     [Header("Max Health")]
     [SerializeField] private float _maxHealthIncreaseCost = 1;

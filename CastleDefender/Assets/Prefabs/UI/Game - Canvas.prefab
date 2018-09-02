@@ -976,7 +976,7 @@ MonoBehaviour:
   _fireRateIncreaseRate: 0.01
   _damageIncreaseCost: 1
   _damageIncreaseCostMultiplier: 1.1
-  _damageIncreaseRate: 1
+  _damageIncreaseRate: 0.05
   _maxHealthIncreaseCost: 1
   _maxHealthIncreaseCostMultiplier: 1.1
   _maxHealthIncreaseRate: 0.5

@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private ProjectileController _projectilePrefab;
     [SerializeField] private float _heatWaveSpawnDistance = 5;
     [SerializeField] private float _heatWaveProjectileCount = 15;
+    [SerializeField] private float _heatWaveProjectileOffset = 0.2f;
 
     private List<ProjectileController> _projectilePool = new List<ProjectileController>();
 
@@ -37,14 +38,16 @@ public class PlayerController : MonoBehaviour
 
     public void HeatWave()
     {
-        for (int i = 0; i < _heatWaveProjectileCount; i++)
+        var rotation = Quaternion.Euler(new Vector3(0, 0, 180));;
+
+        for (float i = 0; i < _heatWaveProjectileCount; i++)
         {
-            FireProjectile(new Vector3(this.transform.position.x, this.transform.position.x + (i * _heatWaveSpawnDistance), 0), Quaternion.identity);
+            FireProjectile(new Vector3(this.transform.position.x, this.transform.position.y + (i * _heatWaveSpawnDistance * _heatWaveProjectileOffset), 0), rotation);
         }
 
-        for (int i = 0; i < _heatWaveProjectileCount; i++)
+        for (float i = 0; i < _heatWaveProjectileCount; i++)
         {
-            FireProjectile(new Vector3(this.transform.position.x, this.transform.position.x - (i * _heatWaveSpawnDistance), 0), Quaternion.identity);
+            FireProjectile(new Vector3(this.transform.position.x, this.transform.position.y - (i * _heatWaveSpawnDistance * _heatWaveProjectileOffset), 0), rotation);
         }
     }
 
@@ -60,6 +63,6 @@ public class PlayerController : MonoBehaviour
             _projectilePool.Add(pooledProjectile);
         }
 
-        pooledProjectile.Activate(this.transform.position, this.transform.rotation);
+        pooledProjectile.Activate(position, rotation);
     }
 }

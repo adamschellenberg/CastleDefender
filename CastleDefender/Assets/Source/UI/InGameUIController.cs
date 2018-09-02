@@ -55,8 +55,7 @@ public class InGameUIController : MonoBehaviour
 
     [Header("Heat Wave")]
     [SerializeField] private Button _heatWaveButton;
-    [SerializeField] private TMP_Text _heatWaveCostText
-;
+    [SerializeField] private TMP_Text _heatWaveCostText;
     [SerializeField] private float _heatWaveCost = 50;
 
     private int _currentFireRatelevel;
